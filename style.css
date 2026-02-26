@@ -1,0 +1,84 @@
+:root {
+    --bg-color: #050505;
+    --term-color: #ffb000; /* Deep Amber */
+    --term-glow: rgba(255, 176, 0, 0.4);
+    --border-width: 2px;
+    --font-stack: 'Courier New', Courier, monospace;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--term-color);
+    font-family: var(--font-stack);
+    text-transform: uppercase;
+    overflow: hidden; /* Stops whole page from scrolling */
+}
+
+/* CRT Scanline Overlay */
+.crt-overlay {
+    position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+    background-size: 100% 2px, 3px 100%;
+    pointer-events: none; z-index: 999;
+}
+
+.terminal-container {
+    max-width: 1400px; margin: 20px auto;
+    height: 95vh; /* Fixed height constraint */
+    display: flex; flex-direction: column;
+    padding: 20px;
+    border: var(--border-width) solid var(--term-color);
+    box-shadow: inset 0 0 20px var(--term-glow), 0 0 20px var(--term-glow);
+    position: relative;
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+}
+
+.geo-header { display: flex; justify-content: space-between; align-items: center; border-bottom: var(--border-width) solid var(--term-color); padding-bottom: 10px; margin-bottom: 20px; }
+.header-decor-left, .header-decor-right { width: 50px; height: 15px; background-color: var(--term-color); }
+
+.system-tabs { display: flex; gap: 10px; margin-bottom: 20px; flex-shrink: 0; }
+.tab-btn { background: transparent; color: var(--term-color); border: var(--border-width) solid var(--term-color); padding: 10px 20px; font-family: inherit; font-size: 1.1rem; cursor: pointer; text-transform: uppercase; transition: all 0.2s; }
+.tab-btn.active, .tab-btn:hover { background: var(--term-color); color: var(--bg-color); }
+
+main { flex-grow: 1; overflow: hidden; display: flex; flex-direction: column; }
+.tab-content { height: 100%; display: none; flex-direction: column; overflow: hidden; }
+.tab-content.active-tab { display: flex; }
+
+.split-view { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; height: 100%; min-height: 0; }
+.panel { border: 1px solid var(--term-color); padding: 15px; display: flex; flex-direction: column; overflow: hidden; }
+
+.term-input { background: transparent; border: 1px solid var(--term-color); color: var(--term-color); padding: 10px; margin: 15px 0; font-family: inherit; width: 100%; }
+.term-input:focus { outline: none; box-shadow: 0 0 10px var(--term-glow); }
+
+/* SCROLLING PHYSICS FIX */
+.scroll-box { flex: 1 1 auto; height: 0; overflow-y: auto; overflow-x: hidden; border: 1px dashed var(--term-color); padding: 10px; margin-bottom: 15px; }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-color); border-left: 1px solid var(--term-color); }
+::-webkit-scrollbar-thumb { background: var(--term-color); }
+
+.item-card { border: 1px solid var(--term-color); padding: 10px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; }
+.item-info span { display: block; font-size: 0.85rem; opacity: 0.8; margin-top:2px; }
+
+/* Source Link Routing */
+.out-link { display: inline-block; color: var(--term-color); text-decoration: none; border-bottom: 1px dashed var(--term-color); font-size: 0.75rem; margin-top: 5px; cursor: pointer; }
+.out-link:hover { background: var(--term-color); color: var(--bg-color); }
+
+.btn-add { background: transparent; border: 1px solid var(--term-color); color: var(--term-color); padding: 5px 10px; cursor: pointer; height: fit-content; }
+.btn-add:hover { background: var(--term-color); color: var(--bg-color); }
+
+.cart-item { border-left: 3px solid var(--term-color); padding-left: 10px; margin-bottom: 15px; }
+.cart-math { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; font-size: 0.8rem; margin-top: 10px; opacity: 0.9; }
+.math-engine-output { border-top: 2px solid var(--term-color); padding-top: 10px; flex-shrink: 0; }
+.totals-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+.highlight { font-weight: bold; text-shadow: 0 0 8px var(--term-glow); }
+
+/* Database Specific */
+.factoid-card { border: 1px solid var(--term-color); padding: 10px; margin-bottom: 10px; cursor: pointer; transition: background 0.2s; clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px); }
+.factoid-card:hover { background: rgba(255, 176, 0, 0.1); }
+.factoid-card h3 { font-size: 0.95rem; margin-bottom: 5px; }
+.truncate-text { display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; font-size: 0.8rem; opacity: 0.7; }

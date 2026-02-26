@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TERM // 10000-BCE // MAX-PROTOCOL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="crt-overlay"></div>
+    <div class="terminal-container">
+        
+        <header class="geo-header">
+            <div class="header-decor-left"></div>
+            <h1>ARCHIVE :: BIO-OPTIMIZATION</h1>
+            <div class="header-decor-right"></div>
+        </header>
+
+        <nav class="system-tabs">
+            <button class="tab-btn active" data-target="procurement-sec">[01] PROCUREMENT_CART</button>
+            <button class="tab-btn" data-target="database-sec">[02] MAXXING_DATABASE</button>
+            <button class="tab-btn" onclick="clearMemory()" style="margin-left:auto; border-style:dashed;">[!] PURGE_MEMORY</button>
+        </nav>
+
+        <main>
+            <section id="procurement-sec" class="tab-content active-tab">
+                <div class="split-view">
+                    <div class="panel list-panel">
+                        <h2>// AVAILABLE REAGENTS</h2>
+                        
+                        <div style="display:flex; gap:10px; margin: 15px 0;">
+                            <input type="text" id="product-search" class="term-input" placeholder="QUERY REAGENTS..." style="margin:0; flex-grow:1;">
+                            <select id="category-filter" class="term-input" style="margin:0; width:auto;">
+                                <option value="All">ALL CATEGORIES</option>
+                                <option value="Vitamins / Minerals">VITAMINS / MINERALS</option>
+                                <option value="Amino Acids">AMINO ACIDS</option>
+                                <option value="Hormones">HORMONES</option>
+                                <option value="Russian Pharmacology">RUSSIAN PHARMA</option>
+                                <option value="Peptides">PEPTIDES</option>
+                                <option value="Miscellaneous">MISCELLANEOUS</option>
+                            </select>
+                        </div>
+
+                        <div id="product-list" class="scroll-box"></div>
+                    </div>
+
+                    <div class="panel cart-panel">
+                        <h2>// ACTIVE PROTOCOL</h2>
+                        <div id="cart-list" class="scroll-box"></div>
+                        <div class="math-engine-output">
+                            <h3>// STACK PROJECTIONS</h3>
+                            <div class="totals-grid">
+                                <span>WEEKLY:</span> <span id="tot-week">€0.00</span>
+                                <span>MONTHLY:</span> <span id="tot-month">€0.00</span>
+                                <span>ANNUAL:</span> <span id="tot-year">€0.00</span>
+                                <span class="highlight">DECADE:</span> <span id="tot-decade" class="highlight">€0.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="database-sec" class="tab-content">
+                <div class="split-view">
+                    <div class="panel list-panel">
+                        <h2>// ANCIENT KNOWLEDGE BASE</h2>
+                        <input type="text" id="db-search" class="term-input" placeholder="QUERY INDEX (e.g., Peating, Astral...)">
+                        <div id="factoid-list" class="scroll-box"></div>
+                    </div>
+                    
+                    <div class="panel detail-panel" id="factoid-detail-panel">
+                        <h2>// DECRYPTED RECORD</h2>
+                        <div class="scroll-box" id="factoid-content" style="border:none; padding:10px 0;">
+                            <p style="opacity:0.5; font-style:italic;">Awaiting input... Select a record from the index to decode.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="products.js"></script>
+    <script src="database.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
