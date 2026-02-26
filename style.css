@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
+
 :root {
     --bg-color: #050505;
     --term-color: #ffb000; /* Deep Amber */
     --term-glow: rgba(255, 176, 0, 0.4);
     --border-width: 2px;
-    --font-stack: 'Courier New', Courier, monospace;
+    --font-stack: 'JetBrains Mono', monospace;
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -14,6 +16,8 @@ body {
     font-family: var(--font-stack);
     text-transform: uppercase;
     overflow: hidden; /* Stops whole page from scrolling */
+	letter-spacing: 0.05ch; 
+    line-height: 1.5; /* Gives the amber glow room to breathe */
 }
 
 /* CRT Scanline Overlay */
