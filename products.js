@@ -15,12 +15,13 @@ const products = [
     { id: 3007, name: "VITAMIN D3 (CALCIFEDIOL) - D.VELOP", category: "Vitamins / Minerals", link: "dvelop", priceEUR: 30.00, totalDoses: 60, recommendedWeeklyDoses: 7 }, // Bypasses liver conversion
     { id: 3008, name: "VITAMIN A (RETINYL PALMITATE) - HEALTH NATURA", category: "Vitamins / Minerals", link: "healthnatura", priceEUR: 25.00, totalDoses: 300, recommendedWeeklyDoses: 7 },
     { id: 3009, name: "DESICCATED BEEF LIVER (NATURE'S VITAMIN A/COPPER)", category: "Vitamins / Minerals", link: "iherb", priceEUR: 30.00, totalDoses: 120, recommendedWeeklyDoses: 14 },
+	{ id: 3033, name: "VITAMIN D + K2 (MK4)", category: "Vitamins / Minerals", link: "iherb", priceEUR: 30, totalDoses: 1200, recommendedWeeklyDoses: 70 },
 
     // --- THE B-VITAMIN METABOLIC ACCELERATORS ---
     // Essential for glucose oxidation (ATP generation) and lowering serotonin.
     { id: 3010, name: "NIACINAMIDE (B3) 500MG - CAPSULES", category: "Vitamins / Minerals", link: "iherb", priceEUR: 12.00, totalDoses: 100, recommendedWeeklyDoses: 14 }, // Stops FFA release
     { id: 3011, name: "NIACINAMIDE (B3) - BULK POWDER", category: "Vitamins / Minerals", link: "bulk", priceEUR: 15.00, totalDoses: 1000, recommendedWeeklyDoses: 21 },
-    { id: 3012, name: "THIAMINE (B1) - THIAMAX (TTFD)", category: "Vitamins / Minerals", link: "objective nutrients", priceEUR: 35.00, totalDoses: 90, recommendedWeeklyDoses: 7 }, // Crosses BBB easily, cures brain fog
+    { id: 3012, name: "THIAMINE (B1) - THIAMAX (TTFD)", category: "Vitamins / Minerals", link: "objective nutrients", priceEUR: 65.00, totalDoses: 180, recommendedWeeklyDoses: 4 }, // Crosses BBB easily, cures brain fog
     { id: 3013, name: "THIAMINE (B1) - BENFOTIAMINE", category: "Vitamins / Minerals", link: "iherb", priceEUR: 18.00, totalDoses: 120, recommendedWeeklyDoses: 7 }, // Anti-glycation
     { id: 3014, name: "PYRIDOXAL-5-PHOSPHATE (P5P - ACTIVE B6)", category: "Vitamins / Minerals", link: "iherb", priceEUR: 15.00, totalDoses: 60, recommendedWeeklyDoses: 7 }, // Specifically used to crush Prolactin
     { id: 3015, name: "RIBOFLAVIN (B2)", category: "Vitamins / Minerals", link: "iherb", priceEUR: 10.00, totalDoses: 100, recommendedWeeklyDoses: 7 },
@@ -28,7 +29,7 @@ const products = [
 
     // --- MAGNESIUM MATRIX ---
     // The ATP binder. Without this, thyroid hormone cannot function.
-    { id: 3017, name: "MAGNESIUM GLYCINATE", category: "Vitamins / Minerals", link: "iherb", priceEUR: 25.00, totalDoses: 120, recommendedWeeklyDoses: 14 }, // Evening relaxation
+    { id: 3017, name: "MAGNESIUM GLYCINATE", category: "Vitamins / Minerals", link: "iherb", priceEUR: 21.00, totalDoses: 180, recommendedWeeklyDoses: 21 }, // Evening relaxation
     { id: 3018, name: "MAGNESIUM MALATE", category: "Vitamins / Minerals", link: "iherb", priceEUR: 20.00, totalDoses: 120, recommendedWeeklyDoses: 7 }, // Morning energy (Krebs cycle)
     { id: 3019, name: "MAGNESIUM L-THREONATE (MAGTEIN)", category: "Vitamins / Minerals", link: "iherb", priceEUR: 35.00, totalDoses: 90, recommendedWeeklyDoses: 14 }, // Cognitive maxxing, crosses BBB
     { id: 3020, name: "MAGNESIUM CHLORIDE (TOPICAL OIL)", category: "Vitamins / Minerals", link: "iherb", priceEUR: 15.00, totalDoses: 200, recommendedWeeklyDoses: 28 }, // Bypasses digestion
@@ -180,4 +181,5 @@ const products = [
     { id: 8009, name: "RED / NIR LIGHT PANEL (660nm / 850nm - BESTQOOL/HOOGA)", category: "Miscellaneous", link: "amazon.de", priceEUR: 180.00, totalDoses: 1, recommendedWeeklyDoses: 7 }, // Hardware. 660nm (Red) treats skin/collagen. 850nm (Near-Infrared) penetrates deep into bone and brain. Physically knocks Nitric Oxide out of the cellular respiratory chain, forcing mitochondria to resume ATP production.
     { id: 8010, name: "BLUE-BLOCKING GLASSES (100% AMBER/RED LENS)", category: "Miscellaneous", link: "amazon.de (Uvex Skyper) / RaOptics", priceEUR: 30.00, totalDoses: 1, recommendedWeeklyDoses: 7 }, // Hardware. Artificial blue light (400-490nm) destroys melatonin in the pineal gland. Wearing these 2 hours before bed is absolutely non-negotiable for achieving the deep Delta-wave sleep required for the HGH/Epitalon protocols to function.
     { id: 8011, name: "EARTHING / GROUNDING MAT (CARBON INFUSED)", category: "Miscellaneous", link: "amazon.de", priceEUR: 40.00, totalDoses: 1, recommendedWeeklyDoses: 7 } // Hardware. Connects the physical body to the Earth's negative electrical potential via the grounded outlet. Neutralizes positive charge build-up (free radicals), lowers blood viscosity, and deepens sleep architecture.
+
 ];
